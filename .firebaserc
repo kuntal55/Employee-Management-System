@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "employee-management-syst-3b490": {
+      "hosting": {
+        "employee-management-system": [
+          "employee-management-syst-3b490"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "employee-management-syst-3b490"
+  }
+}
