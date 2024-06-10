@@ -1,0 +1,24 @@
+<div class="background">
+<div class="container">
+    <form [formGroup]="loginForm" class="login-form">
+        <div class="form-group row">
+            <label for="email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="email" formControlName="email">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="password" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="password" formControlName="password">
+            </div>
+        </div>
+        <div class="form-buttons">
+            <button type="button" class="btn btn-primary" (click)="login()" [disabled]="!loginForm.valid">Submit Here </button>
+            <button type="button" class="btn btn-fourth" (click)="forgotPassword()">Forgot Password </button>
+            <button type="button" class="btn btn-secondary" (click)="registration()">Register</button>
+        </div>
+    </form>
+</div>
+</div>
+

@@ -1,0 +1,66 @@
+<div class="background">
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <div class="form-container">
+            <form [formGroup]="employeeForm">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="firstName" formControlName="firstName">
+                <label for="firstName">First Name</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="lastName" formControlName="lastName">
+                <label for="lastName">Last Name</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="email" formControlName="email">
+                <label for="email">Email</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="mobile" formControlName="mobile">
+                <label for="mobile">Mobile</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="salary" formControlName="salary">
+                <label for="salary">Salary</label>
+              </div>
+              <div class="form-buttons">
+                <button type="button" class="btn btn-primary" (click)="createEmployee()" [disabled]="!employeeForm.valid">{{buttonLabel}}</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="table-container">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">First Name</th>
+                  <th scope="col">Last Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Mobile</th>
+                  <th scope="col">Salary</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let emp of employee">
+                  <td>{{emp.firstName}}</td>
+                  <td>{{emp.lastName}}</td>
+                  <td>{{emp.email}}</td>
+                  <td>{{emp.mobile}}</td>
+                  <td>{{emp.salary}}</td>
+                  <td>
+                    <button class="btn btn-danger" (click)="deleteEmployee(emp)">Delete</button>
+                    <button class="btn btn-warning" (click)="updateEmployee(emp)">Update</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <button (click)="logout()" class="btn btn-danger logout-btn">Logout</button>
+    </div>
+  </div>
+  
